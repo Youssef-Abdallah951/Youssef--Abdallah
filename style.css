@@ -1,0 +1,298 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    overflow-x: hidden;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.dark main{
+    background: linear-gradient(-120deg, #000000 , #1f545e 102%) no-repeat;
+}
+.con-mode span i{    
+    background-color: white;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(253, 236, 0);
+    font-size: 28px;
+    font-weight: bold;
+}
+.con-mode{
+    position: fixed;
+    bottom: 125px;
+    right: 13.5px;
+    z-index: 9999;
+}
+#toggle #fa-sun{
+    display: none;
+}
+main{
+    background: linear-gradient(120deg, #F6FDFF 8%, #77d6e7 70%) no-repeat;
+    height: auto;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: 1s forwards fadein;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: 1s forwards fadein;
+}
+@keyframes fadein {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+nav .navitem{
+    flex-wrap: wrap;
+    gap: 40px;  
+    border-radius: 12px;
+    margin: 20px;
+    padding: 25px 38px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.dark nav .navitem{
+    background-color: rgba(255, 255,255, 0.2);
+}
+nav .navitem a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #1776e2;
+    transition: all 0.3s ease-in;
+}
+.dark nav .navitem a{
+    color: white;
+}
+nav .navitem a:hover{
+    background: linear-gradient(45deg,#77d6e7,#4781d8);
+    color: transparent;
+    transform: rotate(3deg) scale(1.1);
+    background-clip: text;
+}
+.dark nav .navitem a:hover::after{
+    transform: rotate(0deg) scale(1.1);
+}
+.con-scroll{
+    position: fixed;
+    bottom: 30px;
+    right: 5px;
+    margin: 10px;
+    transition: all 0.9s;
+    animation: infinite alternate 1.7s arrow-scroll;
+    box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
+}
+@keyframes arrow-scroll {
+    to{
+        transform: translateY(-20px);
+    }
+}
+.con-scroll{
+    z-index: 9999;
+}
+.con-scroll:hover{
+    filter: brightness(0.7);
+}
+.web-scroll{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    background: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%) no-repeat;
+    box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #F0F9FF;
+    font-size: 23px;
+}
+.dark .web-scroll{
+    color: #4fd5f7;
+    background:linear-gradient(-135deg,#000000,rgba(0, 0, 0,0.5));
+}
+#home h1{
+    text-transform: capitalize;
+    line-height: 1.6;
+    margin: 50px;
+    color: #2c4b94;
+}
+.dark #home h1{
+    color: white;
+}
+#home h1 span{
+    animation: 3s infinite alternate steps(30) name;
+    width: 17ch;
+    display: block;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+@keyframes name {
+    from{width: 4ch;}
+    to{width: 17ch;}
+    0%{color:#77d6e7;}
+    100%{color:rgb(21, 21, 182)}
+}
+.skills{
+    background-color:rgba(189, 186, 186, 0.6);
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    border-radius: 45px;
+}
+.skills:hover{
+    background-color: rgba(124, 123, 123, 0.623);
+}
+.dark .skills{
+    background-color: transparent;
+    border:  rgba(30, 236, 236, 0.671) 2px solid;
+    border-radius: 12px;
+    transition: all 0.3s linear;
+}       
+.dark .skills:hover{
+    background-color: transparent;
+    transform: translateY(-6px);
+}
+.skills div button{
+    margin: 20px;
+    background-color: #e6f5f8;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 12px;
+    text-align: left;
+    text-transform: capitalize;
+    transition: all 0.4s linear;
+    cursor: pointer ;
+    font-size: 20px;
+}
+.dark .skills div button{
+    background-color: transparent;
+    color: white;
+    border: 1px rgb(19, 137, 173) solid;
+}
+.skills div button:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: linear-gradient(45deg, #5cc7dc, #eafcff);
+    box-shadow: 0 10px 15px rgba(55, 215, 243, 0.45);
+}
+#about{
+    background-color: white;
+    height: auto;
+    padding: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: 1s forwards fadein;
+}
+
+#about h2{
+    font-weight: bolder;
+}
+#about h2,#about p{
+    margin: 16px;
+    text-align: center;
+    font-size: 20px;
+}
+#certificate{
+    height: auto;
+    animation: backgroundAnim 5s infinite alternate;
+    padding: 40px;
+    background: linear-gradient(140deg, #2c4b94, #ff6e6e) no-repeat;
+}
+.dark #certificate{
+    background: linear-gradient(135deg, #0F172A 0%, #111827 50%, #083344 100%) no-repeat;
+}
+#certificate .row{
+    margin-top: 30px;
+}
+#certificate h2{
+    background: linear-gradient(140deg, #b919be, blueviolet) no-repeat;
+    background-clip: text;
+    color: transparent;
+    background-size: 400%;
+}
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.card:hover{
+    box-shadow: 0 0 30px cyan,0 0 15px cyan inset;
+    transform: scale(1.05);
+}
+.dark .card:hover{
+    box-shadow: 0 0 40px 10px cyan,0 0 15px cyan inset;
+}
+.row:hover .card {
+    opacity: 0.3;
+}
+.row:hover .card:hover {
+    opacity: 1;
+}
+.card img{
+    width: 100%;
+}
+.card a{
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(45deg, #5cc7dc 70%, #eafcff);
+    color: #e6f5f8;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: center;
+    rotate: -3deg;
+}
+.card a:hover{
+    filter: brightness(0.7);
+}
+.col-lg-6{
+    display: flex;
+    justify-content: center;
+}
+#certificate .card{
+    background-color:  white;
+    padding: 20px;
+    cursor: pointer;
+}
+footer{
+    padding: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.dark footer{
+    background-color: black;
+}
+footer a{
+    font-size: 50px;
+    text-decoration: none;
+    color: var(--color);
+    width: 70px;
+    height: 80px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.6s;
+}
+footer a:hover{
+    background-color: whitesmoke;
+    color: var(--color);
+    box-shadow: 0 4px 40px var(--color);
+}
